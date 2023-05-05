@@ -6,6 +6,7 @@ import 'package:dribble_design_marketplace/Home/Presentation/home_screen.dart';
 import 'package:dribble_design_marketplace/Home/Presentation/item_page/widget/cart_bottom_nav_bar.dart';
 import 'package:dribble_design_marketplace/gen/assets.gen.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
 
 import '../../../Core/Routing/dimensions.dart';
@@ -25,11 +26,15 @@ class ItemScreen extends StatelessWidget {
     return Scaffold(
       bottomNavigationBar: const CartBottomNavBar(),
       appBar: AppBar(
-        leading: Padding(
-          padding: const EdgeInsets.only(left: 16),
-          child: Assets.svg.arrowLeft.svg(),
+        leading: GestureDetector(
+          onTap: () => context.router.pop(),
+          child: Padding(
+            padding: const EdgeInsets.only(left: 16),
+            child: Assets.svg.arrowLeft.svg(),
+          ),
         ),
         leadingWidth: 40,
+        toolbarHeight: 80,
         elevation: 0.0,
         backgroundColor: Colors.transparent,
         actions: [
@@ -52,18 +57,19 @@ class ItemScreen extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: AnimationConfiguration.toStaggeredList(
                 childAnimationBuilder: (child) {
-                  return SlideAnimation(
-                    verticalOffset: 30.0,
-                    child: FadeInAnimation(
+                  return FadeInAnimation(
+                    duration: const Duration(milliseconds: 500),
+                    curve: Curves.easeIn,
+                    child: SlideAnimation(
+                      verticalOffset: 28.0,
                       child: child,
                     ),
                   );
                 },
-                delay: const Duration(milliseconds: 100),
-                duration: const Duration(milliseconds: 100),
+                delay: const Duration(milliseconds: 200),
+                duration: const Duration(milliseconds: 300),
                 children: [
-                  const YBox(32),
-                  Container(color: kDefaultBackground, height: 300),
+                  ItemPageImage(cartItem: cartItem),
                   const YBox(16),
                   Row(
                     children: [
@@ -103,10 +109,39 @@ class ItemScreen extends StatelessWidget {
                     ],
                   ),
                   const YBox(32),
-                  const DescriptionReviewSection(),
+                  DescriptionReviewSection(cartItem: cartItem),
                 ],
               )),
         ),
+      ),
+    );
+  }
+}
+
+class ItemPageImage extends HookWidget {
+  const ItemPageImage({
+    Key? key,
+    required this.cartItem,
+  }) : super(key: key);
+
+  final CartItem cartItem;
+
+  @override
+  Widget build(BuildContext context) {
+    final animationController =
+        useAnimationController(duration: Duration(seconds: 2));
+
+    useEffect(() {
+      animationController.forward();
+      return null;
+    });
+    return FadeTransition(
+      opacity: animationController,
+      child: Container(
+        color: kDefaultBackground,
+        child: cartItem.image?.image(),
+        height: 300,
+        width: double.infinity,
       ),
     );
   }

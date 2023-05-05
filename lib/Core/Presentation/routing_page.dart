@@ -42,6 +42,7 @@ class RootScreen extends StatelessWidget {
                 label: 'Settings',
               ),
             ],
+            elevation: 5.0,
             unselectedFontSize: 12,
             selectedFontSize: 12,
             selectedLabelStyle: const TextStyle(color: Colors.black87),

@@ -4,6 +4,8 @@ import 'package:dribble_design_marketplace/Core/theme/colors.dart';
 import 'package:dribble_design_marketplace/gen/assets.gen.dart';
 import 'package:flutter/material.dart';
 
+import '../item_page/widget/page_indicator.dart';
+
 class AppBarBackground extends StatelessWidget {
   const AppBarBackground({super.key});
 
@@ -53,6 +55,11 @@ class BackgroundOne extends StatelessWidget {
               const YBox(32),
             ],
           ),
+        ),
+        const Positioned(
+          top: 140,
+          right: 16,
+          child: PageIndicator(currentPage: 0),
         )
       ],
     );
@@ -89,6 +96,11 @@ class BackgroundTwo extends StatelessWidget {
               const YBox(32),
             ],
           ),
+        ),
+        const Positioned(
+          top: 140,
+          right: 16,
+          child: PageIndicator(currentPage: 1),
         )
       ],
     );

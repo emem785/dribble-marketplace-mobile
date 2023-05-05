@@ -35,7 +35,7 @@ class CartItem {
         (random.nextDouble() * 100).floorToDouble(),
         (random.nextDouble() * 3).toStringAsFixed(1),
         (random.nextDouble() * 3).toStringAsFixed(1),
-        null,
+        images[random.nextInt(images.length)],
       ),
     );
   }
@@ -43,5 +43,11 @@ class CartItem {
   static List<String> descriptions = [
     "Essentials Men's Short-Sleeve Crewneck T-Shirt",
     "Essentials Men's Regular-Fit Long-Sleeve Oxford...",
+  ];
+
+  static List<AssetGenImage> images = [
+    Assets.jpg.tshirtOne,
+    Assets.jpg.tshirtTwo,
+    Assets.jpg.tshirtThree,
   ];
 }

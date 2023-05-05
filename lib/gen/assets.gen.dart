@@ -15,8 +15,21 @@ class $AssetsJpgGen {
   /// File path: assets/jpg/sweaters.png
   AssetGenImage get sweaters => const AssetGenImage('assets/jpg/sweaters.png');
 
+  /// File path: assets/jpg/tshirt_one.png
+  AssetGenImage get tshirtOne =>
+      const AssetGenImage('assets/jpg/tshirt_one.png');
+
+  /// File path: assets/jpg/tshirt_three.png
+  AssetGenImage get tshirtThree =>
+      const AssetGenImage('assets/jpg/tshirt_three.png');
+
+  /// File path: assets/jpg/tshirt_two.png
+  AssetGenImage get tshirtTwo =>
+      const AssetGenImage('assets/jpg/tshirt_two.png');
+
   /// List of all assets
-  List<AssetGenImage> get values => [makeup, sweaters];
+  List<AssetGenImage> get values =>
+      [makeup, sweaters, tshirtOne, tshirtThree, tshirtTwo];
 }
 
 class $AssetsSvgGen {
@@ -30,6 +43,9 @@ class $AssetsSvgGen {
 
   /// File path: assets/svg/cart.svg
   SvgGenImage get cart => const SvgGenImage('assets/svg/cart.svg');
+
+  /// File path: assets/svg/cart_white.svg
+  SvgGenImage get cartWhite => const SvgGenImage('assets/svg/cart_white.svg');
 
   /// File path: assets/svg/category.svg
   SvgGenImage get category => const SvgGenImage('assets/svg/category.svg');
@@ -79,6 +95,10 @@ class $AssetsSvgGen {
   /// File path: assets/svg/shop.svg
   SvgGenImage get shop => const SvgGenImage('assets/svg/shop.svg');
 
+  /// File path: assets/svg/shop_primary.svg
+  SvgGenImage get shopPrimary =>
+      const SvgGenImage('assets/svg/shop_primary.svg');
+
   /// File path: assets/svg/top_up.svg
   SvgGenImage get topUp => const SvgGenImage('assets/svg/top_up.svg');
 
@@ -101,6 +121,7 @@ class $AssetsSvgGen {
         arrowLeft,
         bill,
         cart,
+        cartWhite,
         category,
         dataPlan,
         favourite,
@@ -116,6 +137,7 @@ class $AssetsSvgGen {
         settingSolid,
         share,
         shop,
+        shopPrimary,
         topUp,
         voucher,
         voucherSolid,

@@ -60,7 +60,7 @@ class CartBottomNavBar extends StatelessWidget {
                     padding: const EdgeInsets.symmetric(horizontal: 16),
                     child: Row(
                       children: [
-                        Assets.svg.cart.svg(),
+                        Assets.svg.cartWhite.svg(),
                         const XBox(8),
                         const Text("1", style: TextStyle(color: Colors.white))
                       ],

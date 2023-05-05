@@ -38,8 +38,8 @@ class AppRouter extends _$AppRouter {
     CustomRoute(
       page: ItemRoute.page,
       path: "/item",
-      durationInMilliseconds: 750,
-      reverseDurationInMilliseconds: 750,
+      durationInMilliseconds: 600,
+      reverseDurationInMilliseconds: 600,
       transitionsBuilder: TranslateTransitionBuilder.translateTransition,
     )
   ];

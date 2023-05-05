@@ -32,15 +32,21 @@ class HomeScreen extends StatelessWidget {
             title: Transform.translate(
               offset: const Offset(-4.0, 0.0),
               child: TextFormField(
-                decoration: const InputDecoration(
+                decoration: InputDecoration(
                   hintText: "Search..",
-                  prefixIcon: Icon(Icons.search),
+                  prefixIcon: Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 8),
+                    child: Assets.svg.search.svg(),
+                  ),
+                  prefixIconConstraints:
+                      BoxConstraints.tight(const Size(32, 32)),
                 ),
               ),
             ),
             titleSpacing: 15.0,
             automaticallyImplyLeading: false,
             leadingWidth: 0.0,
+            toolbarHeight: 90,
             actions: [
               ActionWrapper(amount: 10, child: Assets.svg.cart.svg()),
               const XBox(16),
@@ -48,7 +54,8 @@ class HomeScreen extends StatelessWidget {
               const XBox(16),
             ],
             pinned: true,
-            elevation: 0.0,
+            elevation: 5.0,
+            shadowColor: Colors.black87.withOpacity(0.2),
             backgroundColor: Colors.white,
             flexibleSpace: const FlexibleSpaceBar(
               background: AppBarBackground(),
@@ -65,7 +72,8 @@ class HomeScreen extends StatelessWidget {
                   children: [
                     Text(
                       "Best Sale Product",
-                      style: context.headline3,
+                      style: context.headline3
+                          .copyWith(fontWeight: FontWeight.bold),
                     ),
                     Text(
                       "See more",
@@ -76,7 +84,7 @@ class HomeScreen extends StatelessWidget {
               ),
             ),
           ),
-          ClothesSection()
+          const ClothesSection()
         ],
       ),
     );
@@ -105,7 +113,7 @@ class ActionWrapper extends StatelessWidget {
           ),
           Positioned(
             right: 0,
-            top: 12,
+            top: 24,
             child: Container(
               decoration: BoxDecoration(
                 color: kSecondaryColor,
