@@ -48,7 +48,7 @@ class AppTheme {
         labelStyle: TextStyle(color: kPrimaryColor),
         focusedBorder: OutlineInputBorder(
           borderSide: BorderSide(
-            color: kCaptionColor,
+            color: kDefaultBackground,
           ),
         ),
         border: OutlineInputBorder(

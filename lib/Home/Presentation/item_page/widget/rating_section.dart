@@ -50,6 +50,7 @@ class RatingsSection extends StatelessWidget {
             const XBox(16),
           ],
         ),
+        XBox(32),
         Expanded(
           child: ListView.builder(
             shrinkWrap: true,

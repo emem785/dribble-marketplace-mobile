@@ -29,8 +29,8 @@ class BackgroundOne extends StatelessWidget {
       children: [
         SizedBox(
           width: double.infinity,
-          child: Assets.jpg.sweaters
-              .image(fit: BoxFit.fitWidth, alignment: Alignment.bottomRight),
+          height: double.infinity,
+          child: Assets.jpg.sweaters.image(fit: BoxFit.fill),
         ),
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: 16),

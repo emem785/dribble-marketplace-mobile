@@ -129,7 +129,7 @@ class ItemPageImage extends HookWidget {
   @override
   Widget build(BuildContext context) {
     final animationController =
-        useAnimationController(duration: Duration(seconds: 2));
+        useAnimationController(duration: const Duration(seconds: 2));
 
     useEffect(() {
       animationController.forward();
@@ -139,9 +139,36 @@ class ItemPageImage extends HookWidget {
       opacity: animationController,
       child: Container(
         color: kDefaultBackground,
-        child: cartItem.image?.image(),
-        height: 300,
+        height: 400,
         width: double.infinity,
+        child: Stack(
+          children: [
+            Align(
+              alignment: Alignment.center,
+              child: cartItem.image?.image() ?? SizedBox(),
+            ),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 16),
+              child: Column(
+                children: [
+                  for (var i = 0; i < 4; i++)
+                    Padding(
+                      padding: const EdgeInsets.symmetric(vertical: 4),
+                      child: Container(
+                        width: 60,
+                        height: 60,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(32),
+                          color: kDefaultBackground,
+                        ),
+                        child: CartItem.sideImage[i].image(fit: BoxFit.fill),
+                      ),
+                    )
+                ],
+              ),
+            )
+          ],
+        ),
       ),
     );
   }

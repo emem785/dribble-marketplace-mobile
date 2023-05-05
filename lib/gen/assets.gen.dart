@@ -15,9 +15,21 @@ class $AssetsJpgGen {
   /// File path: assets/jpg/sweaters.png
   AssetGenImage get sweaters => const AssetGenImage('assets/jpg/sweaters.png');
 
+  /// File path: assets/jpg/tshirt_five.png
+  AssetGenImage get tshirtFive =>
+      const AssetGenImage('assets/jpg/tshirt_five.png');
+
+  /// File path: assets/jpg/tshirt_four.png
+  AssetGenImage get tshirtFour =>
+      const AssetGenImage('assets/jpg/tshirt_four.png');
+
   /// File path: assets/jpg/tshirt_one.png
   AssetGenImage get tshirtOne =>
       const AssetGenImage('assets/jpg/tshirt_one.png');
+
+  /// File path: assets/jpg/tshirt_six.png
+  AssetGenImage get tshirtSix =>
+      const AssetGenImage('assets/jpg/tshirt_six.png');
 
   /// File path: assets/jpg/tshirt_three.png
   AssetGenImage get tshirtThree =>
@@ -28,8 +40,16 @@ class $AssetsJpgGen {
       const AssetGenImage('assets/jpg/tshirt_two.png');
 
   /// List of all assets
-  List<AssetGenImage> get values =>
-      [makeup, sweaters, tshirtOne, tshirtThree, tshirtTwo];
+  List<AssetGenImage> get values => [
+        makeup,
+        sweaters,
+        tshirtFive,
+        tshirtFour,
+        tshirtOne,
+        tshirtSix,
+        tshirtThree,
+        tshirtTwo
+      ];
 }
 
 class $AssetsSvgGen {
@@ -43,6 +63,9 @@ class $AssetsSvgGen {
 
   /// File path: assets/svg/cart.svg
   SvgGenImage get cart => const SvgGenImage('assets/svg/cart.svg');
+
+  /// File path: assets/svg/cart_input.svg
+  SvgGenImage get cartInput => const SvgGenImage('assets/svg/cart_input.svg');
 
   /// File path: assets/svg/cart_white.svg
   SvgGenImage get cartWhite => const SvgGenImage('assets/svg/cart_white.svg');
@@ -79,8 +102,16 @@ class $AssetsSvgGen {
   SvgGenImage get notifications =>
       const SvgGenImage('assets/svg/notifications.svg');
 
+  /// File path: assets/svg/notifications_app_bar.svg
+  SvgGenImage get notificationsAppBar =>
+      const SvgGenImage('assets/svg/notifications_app_bar.svg');
+
   /// File path: assets/svg/search.svg
   SvgGenImage get search => const SvgGenImage('assets/svg/search.svg');
+
+  /// File path: assets/svg/search_input.svg
+  SvgGenImage get searchInput =>
+      const SvgGenImage('assets/svg/search_input.svg');
 
   /// File path: assets/svg/setting.svg
   SvgGenImage get setting => const SvgGenImage('assets/svg/setting.svg');
@@ -121,6 +152,7 @@ class $AssetsSvgGen {
         arrowLeft,
         bill,
         cart,
+        cartInput,
         cartWhite,
         category,
         dataPlan,
@@ -132,7 +164,9 @@ class $AssetsSvgGen {
         like,
         likeSolid,
         notifications,
+        notificationsAppBar,
         search,
+        searchInput,
         setting,
         settingSolid,
         share,

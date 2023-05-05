@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:dribble_design_marketplace/Core/Routing/dimensions.dart';
 import 'package:dribble_design_marketplace/Home/Data/models/cart_item.dart';
 import 'package:flutter/material.dart';
@@ -17,6 +19,7 @@ class ReviewSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final random = Random();
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -36,7 +39,7 @@ class ReviewSection extends StatelessWidget {
                   color: kDefaultBackground,
                   borderRadius: BorderRadius.circular(16),
                 ),
-                child: cartItem.image?.image(),
+                child: CartItem.sideImage[i].image(fit: BoxFit.fill),
                 height: 80,
                 width: 80,
               ),

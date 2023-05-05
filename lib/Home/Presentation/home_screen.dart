@@ -34,9 +34,13 @@ class HomeScreen extends StatelessWidget {
               child: TextFormField(
                 decoration: InputDecoration(
                   hintText: "Search..",
+                  enabledBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(8),
+                    borderSide: const BorderSide(color: kInputBackground),
+                  ),
                   prefixIcon: Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 8),
-                    child: Assets.svg.search.svg(),
+                    child: Assets.svg.searchInput.svg(),
                   ),
                   prefixIconConstraints:
                       BoxConstraints.tight(const Size(32, 32)),

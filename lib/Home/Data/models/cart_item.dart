@@ -49,5 +49,15 @@ class CartItem {
     Assets.jpg.tshirtOne,
     Assets.jpg.tshirtTwo,
     Assets.jpg.tshirtThree,
+    Assets.jpg.tshirtFour,
+    Assets.jpg.tshirtFive,
+    Assets.jpg.tshirtSix,
+  ];
+
+  static List<AssetGenImage> sideImage = [
+    Assets.jpg.tshirtOne,
+    Assets.jpg.tshirtTwo,
+    Assets.jpg.tshirtFour,
+    Assets.jpg.tshirtSix,
   ];
 }
